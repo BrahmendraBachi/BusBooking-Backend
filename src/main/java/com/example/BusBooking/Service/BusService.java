@@ -1,7 +1,9 @@
 package com.example.BusBooking.Service;
 
 import com.example.BusBooking.Controller.UserController;
+import com.example.BusBooking.Exception.BusesNotFoundException;
 import com.example.BusBooking.Exception.MethodNotExecutedException;
+import com.example.BusBooking.Exception.ResourceNotFoundException;
 import com.example.BusBooking.Model.BookedTickets;
 import com.example.BusBooking.Model.BusSeats;
 import com.example.BusBooking.Model.Buses;
@@ -38,84 +40,83 @@ public class BusService {
     private Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
-    public List<BusLists> findBusLists(Search search)
-    {
-        List<Buses> allBuses = busRepository.findAll().stream().filter(bus -> bus.getIntStations().contains(search.getStart().toLowerCase()) || bus.getIntStations().contains(search.getEnd().toLowerCase())).toList();
-        System.out.println(allBuses.size());
+    public List<BusLists> findBusLists(Search search) {
+
         try {
-            return findBuses(allBuses, search);
+            List<Buses> dum = busRepository.findAll().stream().filter(
+                    bus -> (
+                            new ArrayList<String>(Arrays.asList(bus.getIntStations().split(","))).indexOf(
+                                    search.getStart().toLowerCase()
+                            ) < new ArrayList<String>(Arrays.asList(bus.getIntStations().split(","))).indexOf(
+                                    search.getEnd().toLowerCase()))).toList();
+
+            dum.forEach(bus -> {
+                System.out.println(bus.getBusId());
+            });
+
+            try {
+
+                return findBuses(dum, search);
+
+            }
+            catch (Exception e)
+            {
+                throw new MethodNotExecutedException("Error has occured in ***findBuses*** method");
+            }
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(e);
+            System.out.println("Buses not found");
+            throw new BusesNotFoundException("Buses are not available in the route");
         }
-        throw new MethodNotExecutedException("findBuses Method is not Executed Successfully");
+
     }
 
     public List<BusLists> findBuses(List<Buses> allBuses, Search search) {
 
         List<BusLists> busLists = new ArrayList<>();
-        String start = search.getStart().toLowerCase();
-        String end = search.getEnd().toLowerCase();
-        List<Buses> buses = new ArrayList<>();
-        for(Buses bus : allBuses)
-        {
-            String intStations = bus.getIntStations();
-            System.out.println("Intermediate Stations:" + intStations);
-            List<String> allStations = new ArrayList<String>(Arrays.asList(intStations.split(",")));
-            System.out.println(allStations);
-            System.out.println(allStations.size());
-            if(allStations.contains(start))
-            {
-                int startIndex = allStations.indexOf(start);
-                if(allStations.contains(end))
-                {
-                    int endIndex = allStations.indexOf(end);
-                    if(endIndex>startIndex)
-                    {
-                        String modifiedDate = commonUsageMethods.getTodayDate();
 
-                        if(modifiedDate.equals(search.getDate()))
-                        {
-                            String getCurrentTime = commonUsageMethods.getCurrentTime();
-                            if(getCurrentTime.compareTo(bus.getStartTime()) >= 0)
-                            {
-                                continue;
-                            }
-                            else{
-                                String seat = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
-                                if(seat==null)
-                                {
-                                    addNewBusDate(bus, search, allStations);
-                                }
-                            }
-                        }
-                        else{
-                            String seat = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
-                            if(seat==null)
-                            {
-                                addNewBusDate(bus, search, allStations);
-                            }
-                        }
-                        
-                        String seats = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
-                        
-                        List<String> SeatVacancyAndSeatNo= countNoOfSeats(seats, startIndex, endIndex, allStations.size());
-                        
-                        
-                        addBusToSearchList(busLists, bus, SeatVacancyAndSeatNo, startIndex, endIndex, search);
+        for (Buses bus : allBuses)
+        {
+            List<String> allStations = new ArrayList<String>(Arrays.asList(
+                    bus.getIntStations().split(",")));
+
+            int startIndex = allStations.indexOf(search.getStart());
+            int endIndex = allStations.indexOf(search.getEnd());
+
+            String modifiedDate = commonUsageMethods.getTodayDate();
+
+            if (modifiedDate.equals(search.getDate())) {
+                String getCurrentTime = commonUsageMethods.getCurrentTime();
+                if (getCurrentTime.compareTo(bus.getStartTime()) >= 0) {
+                    continue;
+                } else {
+                    String seat = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
+                    if (seat == null) {
+                        addNewBusDate(bus, search, allStations);
                     }
                 }
+            } else {
+                String seat = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
+                if (seat == null) {
+                    addNewBusDate(bus, search, allStations);
+                }
             }
+
+            String seats = busSeatsRepository.findSeatsByBusId(bus.getBusId(), search.getDate());
+
+            List<String> SeatVacancyAndSeatNo = countNoOfSeats(seats, startIndex, endIndex, allStations.size());
+
+
+            addBusToSearchList(busLists, bus, SeatVacancyAndSeatNo, startIndex, endIndex, search);
         }
         return busLists;
     }
 
 
-
     private void addBusToSearchList(List<BusLists> busLists, Buses bus,
                                     List<String> SeatVacancyAndSeatNo,
-                                    int startIndex,int endIndex, Search search) {
+                                    int startIndex, int endIndex, Search search) {
 
         int noOfSeatsVacant = Integer.parseInt(SeatVacancyAndSeatNo.get(0));
 
@@ -133,34 +134,37 @@ public class BusService {
         int cost = 0;
         int cost1 = Integer.parseInt(list1.get(startIndex));
         int cost2 = Integer.parseInt(list1.get(endIndex));
-        cost = cost2-cost1;
+        cost = cost2 - cost1;
         busfound.setCost(cost);
         busfound.setBTime(list.get(startIndex));
         busfound.setDTime(list.get(endIndex));
         busfound.setVacancySeats(seatVacancy);
         busfound.setJourneyDate(search.getDate());
-        busfound.setIndexes(startIndex+","+endIndex);
+        busfound.setIndexes(startIndex + "," + endIndex);
         busLists.add(busfound);
 
     }
 
-    private void checkBusIfAvailable(Buses bus) {
 
-    }
-
-    private void addNewBusDate(Buses bus, Search search, List<String> allStations){
+    private void addNewBusDate(Buses bus, Search search, List<String> allStations) {
 
         System.out.println("addNewBus is Triggered");
 
         BusSeats newBus = new BusSeats();
+
         newBus.setBusId(bus.getBusId());
+
         newBus.setDate(search.getDate());
+
         String s = "";
+
         int length = allStations.size();
-        for(int i=0; i<(25*length); i++)
-        {
+
+        // Building Seats String
+        for (int i = 0; i < (25 * length); i++) {
             s = s + "1";
         }
+
         newBus.setSeats(s);
         busSeatsRepository.save(newBus);
     }
@@ -170,16 +174,15 @@ public class BusService {
         int count = 0;
         List<seatNo> allSeats = new ArrayList<>();
         System.out.println("Length :" + seats.length());
-        int iterator=1;
+        int iterator = 1;
         String seatVacancy = "";
         int s = 0;
         int d = e;
 
-        while(iterator<=25)
-        {
+        while (iterator <= 25) {
             String seatsforId = seats.substring(s, e);
             s = e;
-            e = e+d;
+            e = e + d;
             List<String> list = new ArrayList<String>(Arrays.asList(seatsforId.split("")));
             System.out.println("Id :" + iterator + " Seats:" + list);
             seatNo seatsById = new seatNo();
@@ -189,20 +192,16 @@ public class BusService {
             iterator++;
         }
 
-        for(seatNo seat : allSeats)
-        {
+        for (seatNo seat : allSeats) {
             boolean isPresent = false;
-            for(int i=startIndex;i<endIndex;i++)
-            {
+            for (int i = startIndex; i < endIndex; i++) {
                 System.out.println("seat: " + seat.getSeat().get(i));
-                if(seat.getSeat().get(i).equals("0"))
-                {
+                if (seat.getSeat().get(i).equals("0")) {
                     isPresent = true;
                     break;
                 }
             }
-            if(!isPresent)
-            {
+            if (!isPresent) {
                 seatVacancy = seatVacancy + seat.getId() + ",";
                 count++;
             }
@@ -214,13 +213,10 @@ public class BusService {
         return dummy;
     }
 
-    public Integer bookTickets(BookTickets tickets)
-    {
-        try{
+    public Integer bookTickets(BookTickets tickets) {
+        try {
             AddTickets(tickets);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new MethodNotExecutedException("AddTicket Method is not executed with some internal server error");
         }
 
@@ -239,8 +235,6 @@ public class BusService {
         String seats = busSeatsRepository.findSeatsByBusId(busId, date);
 
 
-
-
         List<String> allSeats = new ArrayList<String>(Arrays.asList(seats.split("")));
 
 
@@ -253,11 +247,9 @@ public class BusService {
         int endIndex = Integer.parseInt(indexValues.get(1));
 
 
-        try{
+        try {
             bookSeats(ticketIds, busId, date, startIndex, endIndex, allSeats, intStations);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new MethodNotExecutedException("bookSeats method is not executed successfully with Internal error");
         }
 
@@ -265,7 +257,7 @@ public class BusService {
     }
 
     private void AddTickets(BookTickets tickets) {
-        List<PassengerDetails> allPassengers= tickets.getPassengerDetails();
+        List<PassengerDetails> allPassengers = tickets.getPassengerDetails();
         String busId = tickets.getBusId();
         String intStations = busRepository.findIntStationsByBusId(busId);
         List<String> stations = new ArrayList<String>(Arrays.asList(intStations.split(",")));
@@ -275,8 +267,7 @@ public class BusService {
         int sIndex = Integer.parseInt(indexes.get(0));
         int eIndex = Integer.parseInt(indexes.get(1));
         System.out.println(allPassengers.size());
-        for(int i=0; i<allPassengers.size();i++)
-        {
+        for (int i = 0; i < allPassengers.size(); i++) {
             BookedTickets bookTickets = new BookedTickets();
             bookTickets.setBusId(busId);
             bookTickets.setDate(tickets.getDate());
@@ -294,17 +285,15 @@ public class BusService {
 
     private void bookSeats(List<String> ticketIds, String busId, String date, int startIndex, int endIndex, List<String> allSeats, String intStations) {
         int n = new ArrayList<String>(Arrays.asList(intStations.split(","))).size();
-        System.out.println("Length of Size:"+n);
-        for(String ticketId : ticketIds)
-        {
+        System.out.println("Length of Size:" + n);
+        for (String ticketId : ticketIds) {
 
             System.out.println(ticketId);
             int start = Integer.parseInt(ticketId);
-            start = ((start-1)*n)+startIndex;
+            start = ((start - 1) * n) + startIndex;
             System.out.println(start);
-            int end = start+endIndex;
-            for(int i=start;i<end;i++)
-            {
+            int end = start + endIndex;
+            for (int i = start; i < end; i++) {
                 allSeats.set(i, "0");
             }
         }
@@ -330,19 +319,13 @@ public class BusService {
         bus.setTimes(times);
         bus.setCost(cost);
         bus.setNextDay(0);
-        try
-        {
+        try {
             busRepository.save(bus);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             logger.trace(e.toString());
             throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
         }
         return bus;
     }
-
-    public void print(){
-        System.out.println("print is executed");
-    }
+    
 }
