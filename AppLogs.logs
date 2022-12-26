@@ -1,111 +1,370 @@
-2022-12-23 21:16:37,956 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 20680 (C:\Users\Brahmendra Bachi\Downloads\BusBooking\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\Downloads\BusBooking\BusBooking)
-2022-12-23 21:16:37,963 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-12-23 21:16:37,964 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2022-12-23 21:16:38,091 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-12-23 21:16:38,092 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-12-23 21:16:38,864 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-23 21:16:38,989 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
-2022-12-23 21:16:39,731 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
-2022-12-23 21:16:39,742 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2022-12-23 21:16:39,742 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-12-23 21:16:39,828 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2022-12-23 21:16:39,828 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1734 ms
-2022-12-23 21:16:40,067 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-23 21:16:40,123 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
-2022-12-23 21:16:40,297 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-23 21:16:40,401 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2022-12-23 21:16:40,794 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2022-12-23 21:16:40,827 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-12-23 21:16:41,452 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-23 21:16:41,460 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-23 21:16:41,965 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-23 21:16:42,363 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2022-12-23 21:16:42,401 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
-2022-12-23 21:16:42,410 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 5.274 seconds (JVM running for 5.976)
-2022-12-23 21:17:33,625 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-23 21:17:33,627 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-2] Initializing Servlet 'dispatcherServlet'
-2022-12-23 21:17:33,629 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-2] Completed initialization in 2 ms
-2022-12-23 21:17:33,842 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] user logged in
-2022-12-23 21:17:34,071 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] getUserById is Triggered
-2022-12-23 21:17:43,763 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-6] getBuses is Triggered
-2022-12-23 21:17:46,950 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-4] getBuses is Triggered
-2022-12-23 21:17:59,790 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] BookTickets is triggered
-2022-12-23 21:18:01,913 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] getUserById is Triggered
-2022-12-23 21:18:04,636 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-5] getUserById is Triggered
-2022-12-23 21:18:07,191 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-6] get-upcoming-trips by Id 2  triggered
-2022-12-23 21:25:55,316 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-4] getUserById is Triggered
-2022-12-23 21:25:57,014 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-9] get-upcoming-trips by Id 2  triggered
-2022-12-23 21:25:58,624 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-10] get-completed-trips by Id 2 is triggered
-2022-12-23 21:25:59,827 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] get-onLive-trips by Id 2 is triggered
-2022-12-23 21:26:00,635 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] get-upcoming-trips by Id 2  triggered
-2022-12-23 21:26:01,692 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] get-completed-trips by Id 2 is triggered
-2022-12-23 21:26:06,309 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-5] getUserById is Triggered
-2022-12-23 21:26:07,447 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-8] get-completed-trips by Id 2 is triggered
-2022-12-23 21:26:08,469 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-6] get-onLive-trips by Id 2 is triggered
-2022-12-23 21:26:09,228 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-7] get-upcoming-trips by Id 2  triggered
-2022-12-23 21:26:12,554 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-4] getUserById is Triggered
-2022-12-23 22:29:14,278 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 23752 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
-2022-12-23 22:29:14,278 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-12-23 22:29:14,279 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2022-12-23 22:29:14,335 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-12-23 22:29:14,335 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-12-23 22:29:14,974 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-23 22:29:15,049 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 67 ms. Found 4 JPA repository interfaces.
-2022-12-23 22:29:15,723 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
-2022-12-23 22:29:15,734 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2022-12-23 22:29:15,735 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-12-23 22:29:15,811 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2022-12-23 22:29:15,811 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1475 ms
-2022-12-23 22:29:15,995 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-23 22:29:16,054 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
-2022-12-23 22:29:16,213 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-23 22:29:16,315 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2022-12-23 22:29:16,848 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2022-12-23 22:29:16,895 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-12-23 22:29:17,547 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-23 22:29:17,555 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-23 22:29:17,968 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-23 22:29:18,248 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2022-12-23 22:29:18,276 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
-2022-12-23 22:29:18,284 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.502 seconds (JVM running for 5.185)
-2022-12-23 22:29:24,974 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-23 22:29:24,975 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-12-23 22:29:24,976 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 1 ms
-2022-12-23 22:29:25,025 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getUserById is Triggered
-2022-12-23 22:29:34,420 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-4] getBuses is Triggered
-2022-12-23 22:29:35,601 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-4] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
-2022-12-23 22:29:36,181 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-9] getBuses is Triggered
-2022-12-23 22:29:36,199 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-9] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
-2022-12-23 22:29:36,420 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-7] getBuses is Triggered
-2022-12-23 22:29:36,438 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-7] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
-2022-12-23 22:29:45,796 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-8] getBuses is Triggered
-2022-12-23 22:30:27,700 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-23 22:30:27,704 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2022-12-23 22:30:27,715 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2022-12-23 22:30:32,496 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 24536 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
-2022-12-23 22:30:32,496 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
-2022-12-23 22:30:32,498 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2022-12-23 22:30:32,552 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-12-23 22:30:32,552 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-12-23 22:30:33,128 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-23 22:30:33,189 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
-2022-12-23 22:30:33,865 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
-2022-12-23 22:30:33,879 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
-2022-12-23 22:30:33,879 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-12-23 22:30:33,995 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
-2022-12-23 22:30:33,995 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1443 ms
-2022-12-23 22:30:34,189 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-23 22:30:34,258 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
-2022-12-23 22:30:34,439 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-23 22:30:34,553 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2022-12-23 22:30:34,965 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2022-12-23 22:30:34,993 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-12-23 22:30:35,613 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-23 22:30:35,620 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-23 22:30:36,059 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-23 22:30:36,405 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2022-12-23 22:30:36,434 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
-2022-12-23 22:30:36,444 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.671 seconds (JVM running for 5.332)
-2022-12-23 23:12:25,585 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-12-23 23:12:25,675 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2022-12-23 23:12:25,784 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:23:01,378 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 10536 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:23:01,390 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:23:01,390 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:23:01,443 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:23:01,443 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:23:02,130 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:23:02,215 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:23:02,935 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:23:02,945 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:23:02,946 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:23:03,024 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:23:03,024 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1581 ms
+2022-12-26 21:23:03,208 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:23:03,650 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:23:04,349 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:23:04,476 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:23:04,904 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:23:04,941 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:23:05,942 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:23:05,956 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:23:06,618 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:23:07,027 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:23:07,071 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:23:07,081 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 6.143 seconds (JVM running for 6.697)
+2022-12-26 21:23:17,395 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:23:17,395 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:23:17,398 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 3 ms
+2022-12-26 21:23:17,527 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-4] user logged in
+2022-12-26 21:23:17,761 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-5] getUserById is Triggered
+2022-12-26 21:23:31,150 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] getBuses is Triggered
+2022-12-26 21:23:31,437 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Index -1 out of bounds for length 9
+2022-12-26 21:23:31,438 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Error has occured in ***findBuses*** method
+2022-12-26 21:23:31,440 [WARN] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Buses not found between bangalore to Hyderabad
+2022-12-26 21:23:31,444 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-3] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
+2022-12-26 21:23:38,806 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-9] getBuses is Triggered
+2022-12-26 21:24:43,399 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:24:43,405 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:24:43,418 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:24:47,876 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 15640 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:24:47,877 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:24:47,878 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:24:47,936 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:24:47,937 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:24:48,596 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:24:48,667 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:24:49,386 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:24:49,401 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:24:49,403 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:24:49,497 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:24:49,497 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1560 ms
+2022-12-26 21:24:49,706 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:24:49,773 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:24:49,959 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:24:50,070 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:24:50,669 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:24:50,711 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:24:51,341 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:24:51,353 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:24:51,772 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:24:52,056 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:24:52,086 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:24:52,095 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.647 seconds (JVM running for 5.119)
+2022-12-26 21:24:59,985 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:24:59,985 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:24:59,987 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 1 ms
+2022-12-26 21:25:00,092 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getBuses is Triggered
+2022-12-26 21:25:00,092 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] bangalore
+2022-12-26 21:25:00,092 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] hyderabad
+2022-12-26 21:25:00,329 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Index -1 out of bounds for length 9
+2022-12-26 21:25:00,330 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Error has occured in ***findBuses*** method
+2022-12-26 21:25:00,332 [WARN] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Buses not found between bangalore to Hyderabad
+2022-12-26 21:25:00,337 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-1] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
+2022-12-26 21:26:54,608 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:26:54,614 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:26:54,626 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:26:59,105 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 24716 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:26:59,106 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:26:59,107 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:26:59,166 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:26:59,166 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:26:59,767 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:26:59,831 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:27:00,519 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:27:00,527 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:27:00,528 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:27:00,601 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:27:00,601 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1433 ms
+2022-12-26 21:27:00,795 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:27:00,846 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:27:00,981 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:27:01,076 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:27:01,368 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:27:01,392 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:27:01,934 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:27:01,941 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:27:02,403 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:27:02,688 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:27:02,719 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:27:02,730 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.028 seconds (JVM running for 4.459)
+2022-12-26 21:27:12,564 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:27:12,565 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:27:12,568 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 3 ms
+2022-12-26 21:27:12,624 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getUserById is Triggered
+2022-12-26 21:27:23,146 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] getBuses is Triggered
+2022-12-26 21:27:23,147 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] bangalore
+2022-12-26 21:27:23,147 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] hyderabad
+2022-12-26 21:27:23,281 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] 2
+2022-12-26 21:27:23,327 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] Index -1 out of bounds for length 9
+2022-12-26 21:27:23,328 [ERROR] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] Error has occured in ***findBuses*** method
+2022-12-26 21:27:23,330 [WARN] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-2] Buses not found between bangalore to Hyderabad
+2022-12-26 21:27:23,334 [WARN] org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver [http-nio-9090-exec-2] Resolved [com.example.BusBooking.Exception.BusesNotFoundException: Buses are not available in the route]
+2022-12-26 21:28:26,208 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:28:26,212 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:28:26,221 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:28:30,034 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 20804 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:28:30,035 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:28:30,035 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:28:30,091 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:28:30,091 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:28:30,675 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:28:30,743 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:28:31,374 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:28:31,391 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:28:31,391 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:28:31,470 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:28:31,472 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1381 ms
+2022-12-26 21:28:31,652 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:28:31,691 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:28:31,826 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:28:31,913 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:28:32,205 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:28:32,229 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:28:32,868 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:28:32,879 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:28:33,337 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:28:33,632 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:28:33,663 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:28:33,671 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.027 seconds (JVM running for 4.503)
+2022-12-26 21:28:36,411 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:28:36,412 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:28:36,416 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 3 ms
+2022-12-26 21:28:36,523 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getBuses is Triggered
+2022-12-26 21:28:36,643 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] 2
+2022-12-26 21:29:24,646 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:29:24,649 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:29:24,657 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:29:28,535 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 15556 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:29:28,536 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:29:28,537 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:29:28,591 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:29:28,591 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:29:29,149 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:29:29,212 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:29:29,873 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:29:29,885 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:29:29,885 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:29:29,959 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:29:29,959 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1367 ms
+2022-12-26 21:29:30,161 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:29:30,198 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:29:30,346 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:29:30,444 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:29:30,738 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:29:30,766 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:29:31,360 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:29:31,372 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:29:31,822 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:29:32,109 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:29:32,142 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:29:32,153 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 3.993 seconds (JVM running for 4.431)
+2022-12-26 21:29:35,869 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:29:35,870 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:29:35,871 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 1 ms
+2022-12-26 21:29:35,933 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getUserById is Triggered
+2022-12-26 21:29:46,246 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] getBuses is Triggered
+2022-12-26 21:29:46,363 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] 2 Buses found
+2022-12-26 21:32:03,077 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:32:03,081 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:32:03,090 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:32:06,993 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 4844 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:32:06,994 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:32:06,994 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:32:07,047 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:32:07,047 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:32:07,610 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:32:07,675 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:32:08,322 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:32:08,332 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:32:08,332 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:32:08,403 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:32:08,404 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1356 ms
+2022-12-26 21:32:08,586 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:32:08,630 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:32:08,775 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:32:08,863 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:32:09,192 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:32:09,220 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:32:09,799 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:32:09,807 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:32:10,251 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:32:10,533 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:32:10,561 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:32:10,571 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 3.98 seconds (JVM running for 4.448)
+2022-12-26 21:32:23,759 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:32:23,759 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:32:23,761 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 2 ms
+2022-12-26 21:32:23,810 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getUserById is Triggered
+2022-12-26 21:32:33,750 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] getBuses is Triggered
+2022-12-26 21:32:33,861 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] 2 Buses found
+2022-12-26 21:32:33,893 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :1 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,894 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :2 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :3 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :4 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :5 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :6 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :7 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,895 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :8 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :9 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :10 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :11 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :12 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :13 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :14 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :15 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,896 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :16 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :17 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :18 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :19 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :20 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :21 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :22 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :23 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :24 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,897 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :25 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :1 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :2 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :3 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :4 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :5 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :6 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :7 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :8 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :9 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,908 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :10 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :11 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :12 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :13 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :14 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :15 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :16 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :17 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :18 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :19 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,909 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :20 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,911 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :21 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,911 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :22 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,911 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :23 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,911 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :24 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:32:33,911 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-3] Id :25 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:33:19,339 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:33:19,341 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:33:19,348 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:33:23,167 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 18932 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:33:23,168 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:33:23,169 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:33:23,225 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:33:23,225 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:33:23,828 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:33:23,897 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:33:24,558 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:33:24,570 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:33:24,570 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:33:24,641 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:33:24,642 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1416 ms
+2022-12-26 21:33:24,831 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:33:24,886 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:33:25,072 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:33:25,183 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:33:25,468 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:33:25,499 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:33:26,313 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:33:26,325 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:33:26,797 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:33:27,092 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:33:27,134 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:33:27,145 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.382 seconds (JVM running for 4.805)
+2022-12-26 21:36:45,073 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:36:45,081 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-12-26 21:36:45,099 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-12-26 21:36:49,273 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Starting BusBookingApplication using Java 17.0.2 on LAPTOP-LS4JL0IQ with PID 12520 (C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking\target\classes started by Brahmendra Bachi in C:\Users\Brahmendra Bachi\IdeaProjects\BusBooking)
+2022-12-26 21:36:49,274 [DEBUG] com.example.BusBooking.BusBookingApplication [restartedMain] Running with Spring Boot v2.7.3, Spring v5.3.22
+2022-12-26 21:36:49,275 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-12-26 21:36:49,331 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-26 21:36:49,331 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-26 21:36:49,925 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-26 21:36:49,990 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2022-12-26 21:36:50,676 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2022-12-26 21:36:50,689 [INFO] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2022-12-26 21:36:50,689 [INFO] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-26 21:36:50,778 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-12-26 21:36:50,778 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1447 ms
+2022-12-26 21:36:50,963 [INFO] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-26 21:36:51,033 [INFO] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-26 21:36:51,206 [INFO] org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-26 21:36:51,306 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-12-26 21:36:51,708 [INFO] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-12-26 21:36:51,741 [INFO] org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-26 21:36:52,399 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-26 21:36:52,406 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-26 21:36:52,890 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-26 21:36:53,196 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-12-26 21:36:53,226 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2022-12-26 21:36:53,234 [INFO] com.example.BusBooking.BusBookingApplication [restartedMain] Started BusBookingApplication in 4.398 seconds (JVM running for 4.857)
+2022-12-26 21:37:07,483 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-26 21:37:07,484 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-12-26 21:37:07,486 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-1] Completed initialization in 2 ms
+2022-12-26 21:37:07,610 [TRACE] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] getBuses is Triggered
+2022-12-26 21:37:07,772 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] 2 Buses found
+2022-12-26 21:37:07,822 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :1 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,824 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :2 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,824 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :3 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,824 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :4 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,824 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :5 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :6 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :7 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :8 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :9 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :10 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :11 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :12 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,825 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :13 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :14 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :15 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :16 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :17 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :18 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :19 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :20 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :21 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :22 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :23 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :24 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,826 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :25 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,828 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] 25 Seats are available
+2022-12-26 21:37:07,835 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :1 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,835 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :2 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,835 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :3 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :4 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :5 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :6 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :7 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :8 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :9 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :10 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :11 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,836 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :12 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :13 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :14 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :15 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :16 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :17 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :18 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :19 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :20 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :21 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :22 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :23 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :24 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] Id :25 Seats:[1, 1, 1, 1, 1, 1, 1, 1, 1]
+2022-12-26 21:37:07,838 [INFO] com.example.BusBooking.Controller.UserController [http-nio-9090-exec-1] 25 Seats are available

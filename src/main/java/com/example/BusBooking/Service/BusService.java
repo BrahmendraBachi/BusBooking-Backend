@@ -3,7 +3,6 @@ package com.example.BusBooking.Service;
 import com.example.BusBooking.Controller.UserController;
 import com.example.BusBooking.Exception.BusesNotFoundException;
 import com.example.BusBooking.Exception.MethodNotExecutedException;
-import com.example.BusBooking.Exception.ResourceNotFoundException;
 import com.example.BusBooking.Model.BookedTickets;
 import com.example.BusBooking.Model.BusSeats;
 import com.example.BusBooking.Model.Buses;
@@ -14,10 +13,7 @@ import com.example.BusBooking.Repository.BusSeatsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.stereotype.Service;
-import org.springframework.web.method.annotation.MethodArgumentConversionNotSupportedException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -41,19 +37,23 @@ public class BusService {
     public List<BusLists> findBusLists(Search search) {
 
         try {
+
+            search.setStart(search.getStart().toLowerCase());
+            search.setEnd(search.getEnd().toLowerCase());
+
             List<Buses> dum = busRepository.findAll().stream().filter(
                     bus -> (
                             new ArrayList<String>(Arrays.asList(bus.getIntStations().split(","))).indexOf(
-                                    search.getStart().toLowerCase()
+                                    search.getStart()
                             ) < new ArrayList<String>(Arrays.asList(bus.getIntStations().split(","))).indexOf(
-                                    search.getEnd().toLowerCase()))).toList();
+                                    search.getEnd()))).toList();
 
             dum.forEach(bus -> {
                 System.out.println(bus.getBusId());
             });
-
             try
             {
+                logger.info((dum.size() == 1 ? "1 Bus found" : dum.size() + " Buses found"));
                 return findBuses(dum, search);
             }
             catch (Exception e)
@@ -173,7 +173,6 @@ public class BusService {
 
         int count = 0;
         List<seatNo> allSeats = new ArrayList<>();
-        System.out.println("Length :" + seats.length());
         int iterator = 1;
         String seatVacancy = "";
         int s = 0;
@@ -186,7 +185,7 @@ public class BusService {
             e = e + d;
             List<String> list = new ArrayList<String>(Arrays.asList(seatsforId.split("")));
 
-            System.out.println("Id :" + iterator + " Seats:" + list);
+            logger.info("Id :" + iterator + " Seats:" + list);
 
             seatNo seatsById = new seatNo();
 
@@ -203,7 +202,6 @@ public class BusService {
         for (seatNo seat : allSeats) {
             boolean isPresent = false;
             for (int i = startIndex; i < endIndex; i++) {
-                System.out.println("seat: " + seat.getSeat().get(i));
                 if (seat.getSeat().get(i).equals("0")) {
                     isPresent = true;
                     break;
@@ -217,7 +215,7 @@ public class BusService {
         List<String> dummy = new ArrayList<>();
         dummy.add(String.valueOf(count));
         dummy.add(seatVacancy);
-        System.out.println("Count : " + count);
+        logger.info(count == 1 ? "1 Seat is available" : count + " Seats are available");
         return dummy;
     }
 

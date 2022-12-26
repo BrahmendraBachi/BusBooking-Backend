@@ -1,16 +1,15 @@
 package com.example.BusBooking.Model;
 
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "busSeats")
 public class BusSeats {
 
@@ -31,9 +30,5 @@ public class BusSeats {
     @Column(name = "edate")
     private String edate;
 
-    public BusSeats()
-    {
-        super();
-    }
 
 }

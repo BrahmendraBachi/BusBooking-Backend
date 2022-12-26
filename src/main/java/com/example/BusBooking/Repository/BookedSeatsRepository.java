@@ -10,9 +10,10 @@ import java.util.List;
 
 @Repository
 public interface BookedSeatsRepository extends JpaRepository<BookedTickets, Integer> {
+
     @Query(value = "SELECT * from bus.bookedtickets WHERE userId = :id",
          nativeQuery = true)
-    List<BookedTickets> findByUserId(int id);
+    List<BookedTickets> findByUserId(@SuppressWarnings("unused") int id);
 
     @Query(value = "select * from bus.bookedTickets \n" +
             "where userId = :id \n" +

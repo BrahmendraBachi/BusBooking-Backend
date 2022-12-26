@@ -2,7 +2,9 @@ package com.example.BusBooking.Objects;
 
 
 import com.example.BusBooking.Model.Buses;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
 public class BusLists {
 
@@ -36,9 +40,5 @@ public class BusLists {
 
     private int cost;
 
-    public BusLists()
-    {
-        super();
-    }
 
 }
