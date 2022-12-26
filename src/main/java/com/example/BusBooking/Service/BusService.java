@@ -17,10 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.stereotype.Service;
 import org.springframework.web.method.annotation.MethodArgumentConversionNotSupportedException;
-
-
 import java.text.SimpleDateFormat;
 import java.util.*;
+
 
 @Service
 public class BusService {
@@ -39,7 +38,6 @@ public class BusService {
 
     private Logger logger = LoggerFactory.getLogger(UserController.class);
 
-
     public List<BusLists> findBusLists(Search search) {
 
         try {
@@ -54,10 +52,9 @@ public class BusService {
                 System.out.println(bus.getBusId());
             });
 
-            try {
-
+            try
+            {
                 return findBuses(dum, search);
-
             }
             catch (Exception e)
             {
@@ -161,16 +158,18 @@ public class BusService {
         int length = allStations.size();
 
         // Building Seats String
-        for (int i = 0; i < (25 * length); i++) {
+        for (int i = 0; i < (25 * length); i++)
+        {
             s = s + "1";
         }
 
         newBus.setSeats(s);
         busSeatsRepository.save(newBus);
+
     }
 
     private List<String> countNoOfSeats(String seats, int startIndex, int endIndex, int e) {
-        System.out.println("Value of Size is:" + e);
+
         int count = 0;
         List<seatNo> allSeats = new ArrayList<>();
         System.out.println("Length :" + seats.length());
@@ -180,16 +179,24 @@ public class BusService {
         int d = e;
 
         while (iterator <= 25) {
+
             String seatsforId = seats.substring(s, e);
             s = e;
             e = e + d;
             List<String> list = new ArrayList<String>(Arrays.asList(seatsforId.split("")));
+
             System.out.println("Id :" + iterator + " Seats:" + list);
+
             seatNo seatsById = new seatNo();
+
             seatsById.setId(iterator);
+
             seatsById.setSeat(list);
+
             allSeats.add(seatsById);
+
             iterator++;
+
         }
 
         for (seatNo seat : allSeats) {
@@ -214,9 +221,11 @@ public class BusService {
     }
 
     public Integer bookTickets(BookTickets tickets) {
-        try {
+        try
+        {
             AddTickets(tickets);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new MethodNotExecutedException("AddTicket Method is not executed with some internal server error");
         }
 
@@ -240,7 +249,7 @@ public class BusService {
 
         List<String> indexValues = new ArrayList<String>(Arrays.asList(indexes.split(",")));
 
-        System.out.println("Indev Values:" + indexValues);
+        System.out.println("Index Values:" + indexValues);
 
 
         int startIndex = Integer.parseInt(indexValues.get(0));
@@ -249,14 +258,18 @@ public class BusService {
 
         try {
             bookSeats(ticketIds, busId, date, startIndex, endIndex, allSeats, intStations);
-        } catch (Exception e) {
+        }
+
+        catch (Exception e) {
             throw new MethodNotExecutedException("bookSeats method is not executed successfully with Internal error");
         }
 
         return tickets.getId();
+
     }
 
     private void AddTickets(BookTickets tickets) {
+
         List<PassengerDetails> allPassengers = tickets.getPassengerDetails();
         String busId = tickets.getBusId();
         String intStations = busRepository.findIntStationsByBusId(busId);
@@ -266,8 +279,11 @@ public class BusService {
         List<String> times = new ArrayList<String>(Arrays.asList(allTimes.split(",")));
         int sIndex = Integer.parseInt(indexes.get(0));
         int eIndex = Integer.parseInt(indexes.get(1));
-        System.out.println(allPassengers.size());
-        for (int i = 0; i < allPassengers.size(); i++) {
+
+
+        for (int i = 0; i < allPassengers.size(); i++)
+        {
+
             BookedTickets bookTickets = new BookedTickets();
             bookTickets.setBusId(busId);
             bookTickets.setDate(tickets.getDate());
@@ -280,6 +296,7 @@ public class BusService {
             bookTickets.setUserId(tickets.getId());
             bookTickets.setGender(allPassengers.get(i).getGender());
             bookedSeatsRepository.save(bookTickets);
+
         }
     }
 
@@ -304,8 +321,9 @@ public class BusService {
         busSeatsRepository.save(busSeats);
     }
 
-    public Buses addBus() {
-        System.out.println("Set Bus is triggered");
+    public Buses addBus()
+    {
+
         String intStations = "bangalore,chikkaballapur,bagepally,penugonda,anantapur,gutty,dhone,jedcharla,hyderabad";
         String times = "01:30,02:30,03:30,04:30,05:30,07:00,08:30,10:00,10:45";
         String cost = "0,200,400,550,750,830,950,1050,1150";
@@ -319,12 +337,18 @@ public class BusService {
         bus.setTimes(times);
         bus.setCost(cost);
         bus.setNextDay(0);
-        try {
+
+        try
+        {
             busRepository.save(bus);
-        } catch (Exception e) {
+        }
+
+        catch (Exception e)
+        {
             logger.trace(e.toString());
             throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
         }
+
         return bus;
     }
     

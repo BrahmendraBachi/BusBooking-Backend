@@ -122,7 +122,7 @@ public class UserService {
         }
         catch (Exception e)
         {
-            logger.error(e.toString());
+            logger.error(e.getMessage());
             throw new ResourceNotFoundException("Data with userId " + id + " not present");
         }
 
@@ -131,6 +131,7 @@ public class UserService {
         }
         catch (Exception e)
         {
+            logger.error(e.getMessage());
             throw new QueryExecutionError("Query for upComingTrips is not executed successfully in the method *** getUpcomingTrips ***");
         }
 
@@ -152,7 +153,8 @@ public class UserService {
 
             catch (Exception e)
             {
-                logger.trace(e.toString());
+                logger.error(e.getMessage());
+                logger.error("Error occurred in CancelBooking method");
                 throw new MethodNotExecutedException("Some Internal Error has occurred while Cancelling the ticket");
             }
 
@@ -208,19 +210,9 @@ public class UserService {
         }
         catch (Exception e)
         {
+            logger.error(e.getMessage());
             throw new ResourceNotFoundException("User EmailId not found");
         }
-    }
-
-    public String getTodayDate()
-    {
-        Date today = new Date();
-        return new SimpleDateFormat("yyyy-MM-dd").format(today);
-    }
-
-    public String getCurrentTime(){
-        Calendar c = Calendar.getInstance();
-        return new SimpleDateFormat("HH:mm").format(c.getTime());
     }
 
 }

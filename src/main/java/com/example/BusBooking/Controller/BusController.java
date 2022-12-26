@@ -151,10 +151,12 @@ public class BusController {
     }
 
     @GetMapping("/get-upcoming-trips/{id}")
-    public List<BookedTickets> getUpcomingTrips(@PathVariable int id) throws ParseException {
+    public List<BookedTickets> getUpcomingTrips(@PathVariable int id) throws ParseException{
 
         logger.trace("get-upcoming-trips by Id " + id + "  triggered");
+
         return userService.getUpcomingTrips(id);
+
     }
 
     @DeleteMapping("/cancel-booking/{id}")
@@ -166,7 +168,7 @@ public class BusController {
         }
         catch (Exception e)
         {
-            logger.trace(e.toString());
+            logger.error(e.toString());
             throw new MethodNotExecutedException("Cancel Booking has not executed successfully");
         }
 
