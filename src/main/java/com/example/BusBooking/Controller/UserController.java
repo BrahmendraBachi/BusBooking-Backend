@@ -1,18 +1,11 @@
 package com.example.BusBooking.Controller;
 
-import antlr.collections.List;
-import com.example.BusBooking.Model.BookedTickets;
 import com.example.BusBooking.Model.Users;
-import com.example.BusBooking.Objects.BookTickets;
 import com.example.BusBooking.Objects.login;
 import com.example.BusBooking.Service.UserService;
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
