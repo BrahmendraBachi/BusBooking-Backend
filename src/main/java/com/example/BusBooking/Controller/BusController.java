@@ -136,14 +136,14 @@ public class BusController {
 //    }
 
     @GetMapping("/get-completed-trips/{id}")
-    public List<BookedTickets> getCompletedTrips(@PathVariable int id) throws ParseException {
+    public List<BookedTickets> getCompletedTrips(@PathVariable int id){
 
         logger.trace("get-completed-trips by Id " + id + " is triggered");
         return userService.getCompletedTrips(id);
     }
 
     @GetMapping("/get-onLive-trips/{id}")
-    public List<BookedTickets> getOnLive(@PathVariable int id) throws ParseException {
+    public List<BookedTickets> getOnLive(@PathVariable int id){
 
         logger.trace("get-onLive-trips by Id " + id + " is triggered");
 
@@ -151,7 +151,7 @@ public class BusController {
     }
 
     @GetMapping("/get-upcoming-trips/{id}")
-    public List<BookedTickets> getUpcomingTrips(@PathVariable int id) throws ParseException{
+    public List<BookedTickets> getUpcomingTrips(@PathVariable int id){
 
         logger.trace("get-upcoming-trips by Id " + id + "  triggered");
 
@@ -160,7 +160,7 @@ public class BusController {
     }
 
     @DeleteMapping("/cancel-booking/{id}")
-    public List<BookedTickets> deleteBookedTickets(@PathVariable int id) throws ParseException {
+    public List<BookedTickets> deleteBookedTickets(@PathVariable int id){
 
         logger.trace("Cancel-Booking is triggered");
         try{

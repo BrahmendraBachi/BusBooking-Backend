@@ -43,8 +43,8 @@ public class UserService {
 
 
     public Users addUser(Users user) {
+        logger.trace("addUser method is triggered");
         usersRepository.save(user);
-        System.out.println("Yes User is Added");
         return user;
     }
 
@@ -72,11 +72,11 @@ public class UserService {
         }
     }
 
-    public List<BookedTickets> getCompletedTrips(int id) throws ParseException {
+    public List<BookedTickets> getCompletedTrips(int id){
         try {
             bookedSeatsRepository.findByUserId(id);
         }
-        catch (Exception e)
+        catch (NullPointerException e)
         {
             logger.trace(e.toString());
             throw new ResourceNotFoundException("Data with userId " + id + " not present");
@@ -95,7 +95,7 @@ public class UserService {
         }
     }
 
-    public List<BookedTickets> getOnLiveTrips(int id) throws ParseException {
+    public List<BookedTickets> getOnLiveTrips(int id){
         try{
             bookedSeatsRepository.findByUserId(id);
         }
@@ -115,7 +115,7 @@ public class UserService {
         }
     }
 
-    public List<BookedTickets> getUpcomingTrips(int id) throws ParseException {
+    public List<BookedTickets> getUpcomingTrips(int id){
 
         try{
             bookedSeatsRepository.findByUserId(id);

@@ -58,12 +58,13 @@ public class BusService {
             }
             catch (Exception e)
             {
+                logger.error(e.getMessage());
                 throw new MethodNotExecutedException("Error has occured in ***findBuses*** method");
             }
         }
         catch (Exception e) {
-            System.out.println(e);
-            System.out.println("Buses not found");
+            logger.error(e.getMessage());
+            logger.warn("Buses not found between " + search.getStart() + " to " + search.getEnd());
             throw new BusesNotFoundException("Buses are not available in the route");
         }
 
@@ -226,6 +227,7 @@ public class BusService {
             AddTickets(tickets);
         }
         catch (Exception e) {
+            logger.error(e.getMessage());
             throw new MethodNotExecutedException("AddTicket Method is not executed with some internal server error");
         }
 
@@ -261,6 +263,7 @@ public class BusService {
         }
 
         catch (Exception e) {
+            logger.error(e.getMessage());
             throw new MethodNotExecutedException("bookSeats method is not executed successfully with Internal error");
         }
 
