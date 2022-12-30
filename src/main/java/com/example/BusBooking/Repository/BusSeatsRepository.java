@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 public interface BusSeatsRepository extends JpaRepository<BusSeats, Integer> {
 
-    @Query(value = "Select seats from bus.busseats where busId = :busId and date = :date",
+    @Query(value = "Select seats from BusApplication.busSeats where busId = :busId and date = :date",
             nativeQuery = true
     )
     String findSeatsByBusId(String busId, String date);
 
-    @Query(value = "Select busId, seats, date, id, edate from bus.busseats where busId = :busId and date = :date",
+    @Query(value = "Select busId, seats, date, id, edate from BusApplication.busSeats where busId = :busId and date = :date",
             nativeQuery = true
     )
     BusSeats findBusSeatsById(String busId, String date);

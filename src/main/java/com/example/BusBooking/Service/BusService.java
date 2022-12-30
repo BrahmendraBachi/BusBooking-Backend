@@ -3,6 +3,7 @@ package com.example.BusBooking.Service;
 import com.example.BusBooking.Controller.UserController;
 import com.example.BusBooking.Exception.BusesNotFoundException;
 import com.example.BusBooking.Exception.MethodNotExecutedException;
+import com.example.BusBooking.Exception.QueryExecutionError;
 import com.example.BusBooking.Model.BookedTickets;
 import com.example.BusBooking.Model.BusSeats;
 import com.example.BusBooking.Model.Buses;
@@ -234,14 +235,30 @@ public class BusService {
 
         String date = tickets.getDate();
 
-        String intStations = busRepository.findIntStationsByBusId(busId);
+        String intStations;
+        try{
+            intStations = busRepository.findIntStationsByBusId(busId);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findIntStationsByBusId* has an error in BusRepository");
+        }
 
 
         List<String> ticketIds = tickets.getBookedSeats();
 
         String indexes = tickets.getIndexes();
 
-        String seats = busSeatsRepository.findSeatsByBusId(busId, date);
+
+        String seats;
+        try{
+            seats = busSeatsRepository.findSeatsByBusId(busId, date);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findSeatsByBusId* has an error in the BusSeatsRepository");
+        }
+
 
 
         List<String> allSeats = new ArrayList<String>(Arrays.asList(seats.split("")));
@@ -249,7 +266,6 @@ public class BusService {
 
         List<String> indexValues = new ArrayList<String>(Arrays.asList(indexes.split(",")));
 
-        System.out.println("Index Values:" + indexValues);
 
 
         int startIndex = Integer.parseInt(indexValues.get(0));
@@ -271,12 +287,28 @@ public class BusService {
 
     private void AddTickets(BookTickets tickets) {
 
+        String allTimes;
+
         List<PassengerDetails> allPassengers = tickets.getPassengerDetails();
         String busId = tickets.getBusId();
-        String intStations = busRepository.findIntStationsByBusId(busId);
+        String intStations;
+        try{
+            intStations = busRepository.findIntStationsByBusId(busId);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findIntStationsByBusId* has an error in the BusRepository");
+        }
         List<String> stations = new ArrayList<String>(Arrays.asList(intStations.split(",")));
         List<String> indexes = new ArrayList<String>(Arrays.asList(tickets.getIndexes().split(",")));
-        String allTimes = busRepository.findTimesByBusId(busId);
+        try{
+            allTimes = busRepository.findTimesByBusId(busId);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findBusTimesByBusId* has an error in the BusRepository");
+        }
+
         List<String> times = new ArrayList<String>(Arrays.asList(allTimes.split(",")));
         int sIndex = Integer.parseInt(indexes.get(0));
         int eIndex = Integer.parseInt(indexes.get(1));
@@ -303,10 +335,8 @@ public class BusService {
 
     private void bookSeats(List<String> ticketIds, String busId, String date, int startIndex, int endIndex, List<String> allSeats, String intStations) {
         int n = new ArrayList<String>(Arrays.asList(intStations.split(","))).size();
-        System.out.println("Length of Size:" + n);
-        for (String ticketId : ticketIds) {
 
-            System.out.println(ticketId);
+        for (String ticketId : ticketIds) {
             int start = Integer.parseInt(ticketId);
             start = ((start - 1) * n) + startIndex;
             System.out.println(start);
@@ -315,16 +345,25 @@ public class BusService {
                 allSeats.set(i, "0");
             }
         }
+        BusSeats busSeats;
         String seatsString = String.join("", allSeats);
-        BusSeats busSeats = busSeatsRepository.findBusSeatsById(busId, date);
+        try {
+            busSeats = busSeatsRepository.findBusSeatsById(busId, date);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findBusSeatsById* has an error in the BusSeatsRepository");
+        }
+
         busSeats.setSeats(seatsString);
-        System.out.println("Yes Updated");
+
+        logger.info("Seats are updated");
+
         busSeatsRepository.save(busSeats);
     }
 
     public Buses addBus()
     {
-
         String intStations = "bangalore,chikkaballapur,bagepally,penugonda,anantapur,gutty,dhone,jedcharla,hyderabad";
         String times = "01:30,02:30,03:30,04:30,05:30,07:00,08:30,10:00,10:45";
         String cost = "0,200,400,550,750,830,950,1050,1150";
@@ -352,5 +391,120 @@ public class BusService {
 
         return bus;
     }
-    
+
+    public Buses addBus1()
+    {
+        String intStations = "ongole,singaray konda,kavali,nellore,buchireddypalem,sangam,nellorepalem bypass,badvel,mydkur,proddutur,jammalamadugu,kolimigundla,tadipatri,anantapur,sri krishnadevaraya,bathalapalli,dharmavaram,kothacheruvu,puttaparthi";
+        String times = "15:00,15:40,16:30,18:30,18:35,19:05,19:35,21:40,22:25,23:05,23:25,00:16,00:25,01:25,01:45,02:15,02:35,03:35,5:15";
+        String cost = "0,50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900";
+        Buses bus = new Buses();
+        bus.setBusId("6069");
+        bus.setBusName("Ongole - Putapurty Super Luxury");
+        bus.setStartPlace("ongole");
+        bus.setEndPlace("puttaparti");
+        bus.setStartTime("14:55");
+        bus.setIntStations(intStations);
+        bus.setTimes(times);
+        bus.setCost(cost);
+        bus.setNextDay(1);
+        try
+        {
+            busRepository.save(bus);
+        }
+
+        catch (Exception e)
+        {
+            logger.trace(e.toString());
+            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
+        }
+
+        return bus;
+    }
+
+
+    public Buses addBus2() {
+
+        String intStations = "anantapur,nagasamudram gate,penukonda depot,bagepalli,chikkaballapura,brindavan hotel,devanahalli,bangalore";
+        String times = "09:20,10:10,11:10,11:35,13:10,13:20,13:40,14:20";
+        String cost = "0,40,80,120,160,200,240,280";
+        Buses bus = new Buses();
+        bus.setBusId("6701");
+        bus.setBusName("Anantapur-Banglore Kempegowda");
+        bus.setStartPlace("anantapur");
+        bus.setEndPlace("banglore");
+        bus.setStartTime("09:20");
+        bus.setIntStations(intStations);
+        bus.setTimes(times);
+        bus.setCost(cost);
+        bus.setNextDay(0);
+        try
+        {
+            busRepository.save(bus);
+        }
+
+        catch (Exception e)
+        {
+            logger.trace(e.toString());
+            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
+        }
+
+        return bus;
+
+    }
+
+    public Buses addBus3(){
+        String intStations = "bangalore,chikkaballapur,bagepally,penugonda,anantapur,gutty,dhone,jedcharla,hyderabad";
+        String times = "17:40,18:30,20:00,21:00,22:10,23:20,00:30,01:50,03:35";
+        String cost = "0,200,400,550,750,830,950,1050,1150";
+        Buses bus = new Buses();
+        bus.setBusId("7080");
+        bus.setBusName("Banglore - Hyderabad (Garuda)");
+        bus.setStartPlace("bengalore");
+        bus.setEndPlace("hyderabad");
+        bus.setStartTime("17:40");
+        bus.setIntStations(intStations);
+        bus.setTimes(times);
+        bus.setCost(cost);
+        bus.setNextDay(0);
+        try
+        {
+            busRepository.save(bus);
+        }
+
+        catch (Exception e)
+        {
+            logger.trace(e.toString());
+            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
+        }
+
+        return bus;
+    }
+
+    public Buses addBus4(){
+        String intStations = "bangalore,coimbatore";
+        String times = "22:45,6:00";
+        String cost = "0,1400";
+        Buses bus = new Buses();
+        bus.setBusId("4494");
+        bus.setBusName("Jabbar Sleepers");
+        bus.setStartPlace("bengalore");
+        bus.setEndPlace("coimbatore");
+        bus.setStartTime("22:45");
+        bus.setIntStations(intStations);
+        bus.setTimes(times);
+        bus.setCost(cost);
+        bus.setNextDay(0);
+        try
+        {
+            busRepository.save(bus);
+        }
+
+        catch (Exception e)
+        {
+            logger.trace(e.toString());
+            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
+        }
+
+        return bus;
+    }
 }

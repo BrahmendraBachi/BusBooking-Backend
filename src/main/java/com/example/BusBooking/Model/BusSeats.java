@@ -24,7 +24,7 @@ public class BusSeats {
     private String date;
 
 
-    @Column(name = "seats")
+    @Column(name = "seats", columnDefinition = "TEXT")
     private String seats;
 
     @Column(name = "edate")

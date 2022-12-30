@@ -23,6 +23,7 @@ public class UserController {
     public Users addUser(@RequestBody Users user)
     {
         logger.trace("addUser is Triggered");
+
         return userService.addUser(user);
     }
 

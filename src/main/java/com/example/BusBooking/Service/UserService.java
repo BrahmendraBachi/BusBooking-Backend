@@ -1,6 +1,7 @@
 package com.example.BusBooking.Service;
 
 import com.example.BusBooking.Controller.UserController;
+import com.example.BusBooking.Exception.DuplicateUserException;
 import com.example.BusBooking.Exception.MethodNotExecutedException;
 import com.example.BusBooking.Exception.QueryExecutionError;
 import com.example.BusBooking.Exception.ResourceNotFoundException;
@@ -44,7 +45,15 @@ public class UserService {
 
     public Users addUser(Users user) {
         logger.trace("addUser method is triggered");
-        usersRepository.save(user);
+
+        if(usersRepository.findByUserName(user.getEmailId()).size() == 0)
+        {
+            usersRepository.save(user);
+        }
+        else{
+            logger.error("User already exists");
+            throw new DuplicateUserException("User with emailId already exist. Try with some other emailId");
+        }
         return user;
     }
 
@@ -106,7 +115,6 @@ public class UserService {
         }
 
         try{
-//            System.out.println("CommonUsageMethods" + commonUsageMethods.getCurrentTime());
             return bookedSeatsRepository.TripsOnLive(id, commonUsageMethods.getTodayDate(), commonUsageMethods.getCurrentTime());
         }
         catch (Exception e){
@@ -170,9 +178,26 @@ public class UserService {
 
     private void CancelBooking(BookedTickets ticket) {
         String seatNo = ticket.getSeatNo();
-        BusSeats busSeats = busSeatsRepository.findBusSeatsById(ticket.getBusId(),ticket.getDate());
+        BusSeats busSeats = new BusSeats();
+        try {
+            busSeats = busSeatsRepository.findBusSeatsById(ticket.getBusId(),ticket.getDate());
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findBusSeatsById* has an error in the BusSeatsRepository");
+        }
+
         String seats = busSeats.getSeats();
-        String intStations = busRepository.findIntStationsByBusId(ticket.getBusId());
+        String intStations;
+        try{
+            intStations = busRepository.findIntStationsByBusId(ticket.getBusId());
+        }
+        catch (Exception e){
+
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findIntStationsByBusId* has an error in the BusRepository");
+
+        }
         List<String> stations = new ArrayList<String>(Arrays.asList(intStations.split(",")));
         int len = stations.size();
         List<String> allSeats = new ArrayList<String>(Arrays.asList(seats.split("")));
@@ -191,7 +216,14 @@ public class UserService {
     public String checkUserByEmailId(String emailId)
     {
         System.out.println(emailId);
-        List<Users> user = usersRepository.findByUserName(emailId);
+        List<Users> user;
+        try {
+            user = usersRepository.findByUserName(emailId);
+        }
+        catch (Exception e){
+            logger.error(e.getMessage());
+            throw new QueryExecutionError("Query *findByUserName* has an error in the userRepository");
+        }
         if(user.size()>0)
         {
             return "success";

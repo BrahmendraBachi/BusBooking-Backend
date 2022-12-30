@@ -41,7 +41,7 @@ public class BusController {
     @Autowired
     private BusRepository busRepository;
 
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
+    private Logger logger = LoggerFactory.getLogger(BusController.class);
 
     public void print(){
         System.out.println("print is executed");
@@ -53,31 +53,31 @@ public class BusController {
 
 
 
-        return busService.addBus();
-//        System.out.println("Set Bus is triggered");
-//        String intStations = "bangalore,chikkaballapur,bagepally,penugonda,anantapur,gutty,dhone,jedcharla,hyderabad";
-//        String times = "01:30,02:30,03:30,04:30,05:30,07:00,08:30,10:00,10:45";
-//        String cost = "0,200,400,550,750,830,950,1050,1150";
-//        Buses bus = new Buses();
-//        bus.setBusId("1432");
-//        bus.setBusName("Vikram Travels");
-//        bus.setStartPlace("bangalore");
-//        bus.setEndPlace("hyderabad");
-//        bus.setStartTime("01:30");
-//        bus.setIntStations(intStations);
-//        bus.setTimes(times);
-//        bus.setCost(cost);
-//        bus.setNextDay(0);
-//        try
-//        {
-//            busRepository.save(bus);
-//        }
-//        catch (Exception e)
-//        {
-//            logger.trace(e.toString());
-//            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
-//        }
-//        return bus;
+//        return busService.addBus();
+        System.out.println("Set Bus is triggered");
+        String intStations = "bangalore,chikkaballapur,bagepally,penugonda,anantapur,gutty,dhone,jedcharla,hyderabad";
+        String times = "01:30,02:30,03:30,04:30,05:30,07:00,08:30,10:00,10:45";
+        String cost = "0,200,400,550,750,830,950,1050,1150";
+        Buses bus = new Buses();
+        bus.setBusId("1432");
+        bus.setBusName("Vikram Travels");
+        bus.setStartPlace("bangalore");
+        bus.setEndPlace("hyderabad");
+        bus.setStartTime("01:30");
+        bus.setIntStations(intStations);
+        bus.setTimes(times);
+        bus.setCost(cost);
+        bus.setNextDay(0);
+        try
+        {
+            busRepository.save(bus);
+        }
+        catch (Exception e)
+        {
+            logger.trace(e.toString());
+            throw new MethodNotExecutedException("Some Internal has occured in the addBus method");
+        }
+        return bus;
     }
 
 
@@ -172,5 +172,25 @@ public class BusController {
             throw new MethodNotExecutedException("Cancel Booking has not executed successfully");
         }
 
+    }
+
+//    @GetMapping("/setBus1")
+//    public Buses addBus1(){
+//        return busService.addBus1();
+//    }
+
+    @GetMapping("/setBus2")
+    public Buses addBus2(){
+        return busService.addBus2();
+    }
+
+    @GetMapping("/setBus3")
+    public Buses addBus3(){
+        return busService.addBus3();
+    }
+
+    @GetMapping("/setBus4")
+    public Buses addBus4(){
+        return busService.addBus4();
     }
 }
